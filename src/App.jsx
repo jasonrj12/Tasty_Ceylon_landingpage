@@ -3,7 +3,7 @@ import "./styles.css";
 
 const SHOP_URL = "https://tastyceylon.co.uk";
 const IMAGES = {
-  logo: "/assets/tasy-ceylon-logo.png",
+  logo: "/assets/tasty-ceylon-logo.png",
   hero: "/assets/tasty-ceylon-hero.jpg",
   kottu: "/assets/kottu.png",
   rice: "/assets/rice.png",
@@ -19,7 +19,7 @@ const cultureCards = [
     number: "01",
     icon: "ආ",
     title: "Ayubowan",
-    copy: "A greeting that wishes long life — and a spirit of welcome that sits at the heart of Sri Lankan hospitality.",
+    copy: "A greeting that wishes long life - and a spirit of welcome that sits at the heart of Sri Lankan hospitality.",
   },
   {
     number: "02",
@@ -121,9 +121,9 @@ function Eyebrow({ children, light = false }) {
   );
 }
 
-function ArrowButton({ children, className = "" }) {
+function ArrowButton({ children, className = "", href = SHOP_URL, target, rel }) {
   return (
-    <a className={`button ${className}`.trim()} href={SHOP_URL}>
+    <a className={`button ${className}`.trim()} href={href} target={target} rel={rel}>
       {children} <span aria-hidden="true">↗</span>
     </a>
   );
@@ -141,7 +141,7 @@ function BrandMark({ large = false }) {
   return (
     <img
       className={`navbar-logo${large ? " navbar-logo--large" : ""}`}
-      src="/assets/tasty-ceylon-logo.png"
+      src={IMAGES.logo}
       alt="Tasty Ceylon logo"
     />
   );
@@ -209,7 +209,7 @@ export default function App() {
           <span><strong>Tasty Ceylon</strong><small>Sri Lankan cuisine</small></span>
         </a>
         <nav className="primary-nav" aria-label="Primary navigation">
-          <ArrowButton className="button--small">Order now</ArrowButton>
+          <ArrowButton className="button--small" href="https://order.tastyceylon.co.uk/food-menu" target="_blank" rel="noopener noreferrer">View Menu</ArrowButton>
         </nav>
       </header>
 
@@ -230,13 +230,13 @@ export default function App() {
             <h1 id="hero-title">Come for the spice.<em>Stay for the story.</em></h1>
             <p className="hero-copy">Discover the warmth of Sri Lankan hospitality through colourful curries, sizzling kottu and recipes made with soul.</p>
             <div className="hero-actions">
-              <ArrowButton className="button--gold">Explore the menu</ArrowButton>
+              <ArrowButton className="button--gold" href="https://order.tastyceylon.co.uk/" target="_blank" rel="noopener noreferrer">Order now</ArrowButton>
               <a className="text-link" href="#story">Meet Tasty Ceylon <span aria-hidden="true">↓</span></a>
             </div>
           </div>
           <aside className="hero-card" aria-label="Restaurant information">
             <span className="status-dot" /><p>Serving every day</p>
-            <strong>8:00am — 11:00pm</strong>
+            <strong>8:00am - 11:00pm</strong>
             <a href="#visit">Birmingham · Get directions</a>
           </aside>
           <a className="scroll-cue" href="#culture" aria-label="Scroll to culture"><span>Discover</span><i /></a>
@@ -285,7 +285,7 @@ export default function App() {
               </article>
             ))}
           </div>
-          <ArrowButton className="button--outline-light">View the full menu</ArrowButton>
+          <ArrowButton className="button--outline-light" href="https://order.tastyceylon.co.uk/food-menu" target="_blank" rel="noopener noreferrer">Explore Our Menu</ArrowButton>
         </section>
 
         <section className="story section" id="story">
@@ -299,7 +299,7 @@ export default function App() {
             <Eyebrow>Our story</Eyebrow>
             <h2>The heart of Sri Lankan flavours, here in Birmingham.</h2>
             <p className="story-lead">Tasty Ceylon is a welcoming destination for authentic Sri Lankan cuisine and genuine hospitality.</p>
-            <p>Traditional cooking, quality ingredients and careful service come together in food that feels both comforting and memorable — whether you are sharing a family meal, catching up with friends or ordering a favourite to enjoy at home.</p>
+            <p>Traditional cooking, quality ingredients and careful service come together in food that feels both comforting and memorable - whether you are sharing a family meal, catching up with friends or ordering a favourite to enjoy at home.</p>
             <div className="story-values">
               <div><strong>Fresh</strong><span>Prepared with care</span></div>
               <div><strong>Authentic</strong><span>Rooted in tradition</span></div>
@@ -310,8 +310,18 @@ export default function App() {
 
         <section className="offer section" aria-label="First order offer">
           <div className="offer-mark" aria-hidden="true">25</div>
-          <div data-reveal><Eyebrow light>Your first taste</Eyebrow><h2>Enjoy 25% off your first online order.</h2><p>Register through the Tasty Ceylon shop to claim the current welcome offer. Terms apply.</p></div>
-          <ArrowButton className="button--gold">Order now</ArrowButton>
+          <div data-reveal>
+            <Eyebrow light>Your first taste</Eyebrow>
+            <h2>Enjoy 25% off your first online order.</h2>
+            <p>Create a free account on our online shop and your first-order discount is applied automatically at checkout.</p>
+            <ol className="offer-steps">
+              <li><span className="offer-step-num">1</span><span>Create a free account</span></li>
+              <li><span className="offer-step-num">2</span><span>Place your first order</span></li>
+              <li><span className="offer-step-num">3</span><span>25% off applied at checkout</span></li>
+            </ol>
+            <p className="offer-tc">Offer valid for new accounts only. One use per customer. Cannot be combined with other offers. Tasty Ceylon reserves the right to withdraw or amend this offer at any time.</p>
+          </div>
+          <ArrowButton className="button--gold" href="https://order.tastyceylon.co.uk/my-account/register" target="_blank" rel="noopener noreferrer">Register &amp; Save 25%</ArrowButton>
         </section>
 
         <section className="visit section" id="visit">
@@ -321,11 +331,11 @@ export default function App() {
             <p>Visit us in Birmingham, order for collection, or have your Sri Lankan favourites delivered to your door.</p>
             <div className="contact-list">
               <div><span>Find us</span><address>47 Woodgate Lane<br />Birmingham, West Midlands<br />B32 3QU</address></div>
-              <div><span>Opening hours</span><p>Monday — Sunday<br /><strong>8:00am — 11:00pm</strong></p></div>
+              <div><span>Opening hours</span><p>Monday - Sunday<br /><strong>8:00am - 11:00pm</strong></p></div>
               <div><span>Talk to us</span><p><a href="tel:+441212967768">0121 296 7768</a><br /><a href="mailto:tastyceylon17@gmail.com">tastyceylon17@gmail.com</a></p></div>
             </div>
             <div className="visit-actions">
-              <a className="button button--dark" href="https://www.google.com/maps/search/?api=1&query=47+Woodgate+Lane+Birmingham+B32+3QU">Get directions <span aria-hidden="true">↗</span></a>
+              <a className="button button--dark" href="https://www.google.com/maps/search/?api=1&query=47+Woodgate+Lane+Birmingham+B32+3QU" target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
               <a className="text-link text-link--dark" href="tel:+441212967768">Call the restaurant</a>
             </div>
           </div>
@@ -350,7 +360,7 @@ export default function App() {
         <div className="footer-links">
           <div><strong>Explore</strong><a href="#culture">Culture</a><a href="#food">Our food</a><a href="#story">Our story</a></div>
           <div><strong>Visit</strong><a href="#visit">Location &amp; hours</a><a href="tel:+441212967768">Call us</a><a href="mailto:tastyceylon17@gmail.com">Email us</a></div>
-          <div><strong>Order</strong><a href={SHOP_URL}>Delivery</a><a href={SHOP_URL}>Collection</a></div>
+          <div><strong>Order</strong><a href="https://order.tastyceylon.co.uk/food-menu;method=Delivery" target="_blank" rel="noopener noreferrer">Delivery</a><a href="https://order.tastyceylon.co.uk/food-menu;method=Collection" target="_blank" rel="noopener noreferrer">Collection</a></div>
         </div>
         <div className="footer-bottom"><span>© 2026 Tasty Ceylon. All rights reserved.</span><a href="#home">Back to top ↑</a></div>
       </footer>
