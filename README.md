@@ -67,10 +67,11 @@ npm run build
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
+## 👨‍💻 Authors
 
-**Renish Jason**
+**Akindu Bogahawatta** 
+* GitHub: [AKindubogahawatta](https://github.com/AKindubogahawatta)
 
+**Renish Jason** 
 * GitHub: [@jasonrj12](https://github.com/jasonrj12)
-* Portfolio: [jasonrj.site](https://jasonrj.site)
 
