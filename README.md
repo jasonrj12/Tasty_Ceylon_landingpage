@@ -7,9 +7,6 @@
 [![React](https://img.shields.io/badge/React-2026-blue?style=for-the-badge&logo=react)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-2026-646CFF?style=for-the-badge&logo=vite)](https://vite.dev/)
 
-## 📸 Preview
-
-![Tasty Ceylon Preview](./public/images/preview.png)
 
 ## ✨ Features
 
