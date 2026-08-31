@@ -236,7 +236,7 @@ export default function App() {
           </div>
           <aside className="hero-card" aria-label="Restaurant information">
             <span className="status-dot" /><p>Serving every day</p>
-            <strong>8:00am - 11:00pm</strong>
+            <strong>11:00am - 09:00pm</strong>
             <a href="#visit">Birmingham · Get directions</a>
           </aside>
           <a className="scroll-cue" href="#culture" aria-label="Scroll to culture"><span>Discover</span><i /></a>
@@ -331,7 +331,7 @@ export default function App() {
             <p>Visit us in Birmingham, order for collection, or have your Sri Lankan favourites delivered to your door.</p>
             <div className="contact-list">
               <div><span>Find us</span><address>47 Woodgate Lane<br />Birmingham, West Midlands<br />B32 3QU</address></div>
-              <div><span>Opening hours</span><p>Monday - Sunday<br /><strong>8:00am - 11:00pm</strong></p></div>
+              <div><span>Opening hours</span><p>Monday - Sunday<br /><strong>11:00am - 09:00pm</strong></p></div>
               <div><span>Talk to us</span><p><a href="tel:+441212967768">0121 296 7768</a><br /><a href="mailto:tastyceylon17@gmail.com">tastyceylon17@gmail.com</a></p></div>
             </div>
             <div className="visit-actions">
